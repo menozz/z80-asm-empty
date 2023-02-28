@@ -1,0 +1,58 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "Zesarux",
+            "remoteType": "zrcp",
+            "zrcp": {
+                "hostname": "localhost",
+                "port": 10999,
+                "skipInterrupt": false,
+                "loadDelay": 1000,
+            },
+            "rootFolder": "${workspaceFolder}/src",
+            "sjasmplus": [
+                {
+                    "path": "obj/main.sld.txt"
+                }
+            ],
+            "disassemblerArgs": {
+                "esxdosRst": true
+            },
+            "load": "bin/game.sna",
+            "startAutomatically": false,
+            "preLaunchTask": "Build"
+        },
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "EmulatorZ80",
+            "remoteType": "zsim",
+            "zsim": {
+                "memoryModel": "ZX48K",
+                "visualMemory": true,
+                "zxBorderWidth": 5,
+                "ulaScreen": true,
+                "vsyncInterrupt": true,
+                "zxKeyboard": true,
+                "zxBeeper": true
+            },
+            "sjasmplus": [
+                {
+                    "path": "obj/main.sld"
+                }
+            ],
+            "history": {
+                "reverseDebugInstructionCount": 1000000,
+                "spotCount": 10,
+                "codeCoverageEnabled": true
+            },
+            "startAutomatically": false,
+            "rootFolder": "${workspaceFolder}/src",
+            "load": "bin/game.sna",
+            "preLaunchTask": "Build"
+        }
+    ]
+}
