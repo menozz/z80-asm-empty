@@ -1,1 +1,3 @@
 src/**/* linguist-generated=true
+tools/**/* linguist-vendored
+.vscode/**/* linguist-vendored
